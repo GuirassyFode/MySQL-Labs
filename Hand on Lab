@@ -1,0 +1,40 @@
+Objective: 1-Create a database and table at the command line 2-Create a database using phpMyAdmin 3-Create a table Define columns Edit the table definition As with many RDBMS, you can create databases and tables in MySQL by using a command line interface, a graphical user interface, or API calls
+
+Requirement:
+Install Apache web server(https://directory.apache.org/studio/download/download-windows.html)
+
+Install PhpMyAdmin by extracting your PhpMyAdmin into your Apache web directory, and edit.
+
+Install MySQL
+
+Use MySQL command line to create your Database, tables and insert data in them.
+
+4.a CREATE DATABSE employees;
+
+4.b use employees;
+
+4.c CREATE TABLE employees_details(firstname varchar(20), lastname varchar(20), stardate date, salary decimal);
+
+Loading Data in MySQL Database using the Command line
+
+INSERT INTO employees_details (firstname , lastname , stardate , salary ) values("Toto","song", 12/26/2021, 18.6);
+
+INSERT INTO employees_details (firstname , lastname , stardate , salary ) values("yoyo","ted", 12/26/2021, 19.6);
+
+INSERT INTO employees_details (firstname , lastname , stardate , salary ) values("Maya","rory", 12/26/2021, 15.6);
+
+INSERT INTO employees_details (firstname , lastname , stardate , salary ) values("Toto","calton", 12/26/2021, 15.6);
+
+INSERT INTO employees_details (firstname , lastname , stardate , salary ) values("Sam","MacClare", 10/26/2021, 20.6);
+
+Command line backup and restore:
+
+6.a Backup using mysqldump utility:
+
+mysqldum -u root employees > employeesbackup.sql
+
+6.b Restore the backup
+
+mysql -u root restore_employees < employeesbackup.sql
+
+6.c Restoring using source command mysql source employeesbackup.sql
